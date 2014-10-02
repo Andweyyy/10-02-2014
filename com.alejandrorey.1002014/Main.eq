@@ -16,12 +16,15 @@ public class Main: SEScene
 	SESprite text;
 	String display;
 	int bounce = 0;
+	AudioClipManager bgm;
 	
 	public void initialize(SEResourceCache rsc)
 	{
 		base.initialize(rsc);
 		img.for_resource("app");
-	
+
+		bgm.prepare("OBB");
+		bgm.play("OBB");
 
 		rsc.prepare_image("bg","maxresdefault",get_scene_width(),get_scene_height());
 		bg= add_sprite_for_image(SEImage.for_resource("bg"));
