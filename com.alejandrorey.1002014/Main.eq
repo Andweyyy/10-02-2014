@@ -5,9 +5,10 @@
 
 public class Main: SEScene
 {
-	SESprite bg;
+	
 	SESprite fg;
 	SEImage img;
+	SESprite bg;
 	bool directlr = true;
 	bool directtb = true;
 	int speed = 100;
@@ -20,12 +21,14 @@ public class Main: SEScene
 	{
 		base.initialize(rsc);
 		img.for_resource("app");
-		
-		bg= add_sprite_for_color(Color.instance("lightblue"),get_scene_width(),get_scene_height());
-		bg.move(0,0);
+	
+
+		rsc.prepare_image("bg","maxresdefault",get_scene_width(),get_scene_height());
+		bg= add_sprite_for_image(SEImage.for_resource("bg"));
+	
 
 		rsc.prepare_image("img","tardis",get_scene_width()*0.1,get_scene_height()*0.1);
-		fg= add_sprite_for_image(SEImage.for_resource("img"));//add_sprite_for_color(Color.instance("white"),get_scene_width()*0.1,get_scene_height()*0.1); ////
+		fg= add_sprite_for_image(SEImage.for_resource("img"));
 		fg.move(100,100);
 
 	
